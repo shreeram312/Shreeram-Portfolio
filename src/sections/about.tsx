@@ -9,10 +9,10 @@ export const About = () => {
     <section className="p-10 flex flex-col md:flex-row items-center justify-between">
       <div className="md:w-1/2">
         <h1 className="font-mono text-2xl">Hello</h1>
-        <h1 className="text-4xl font-bold leading-relaxed">
+        <h1 className="text-4xl  font-bold leading-relaxed">
           I&apos;m Shreeram Mutukundu,
         </h1>
-        <h1 className="text-5xl font-bold mb-4 leading-tight">
+        <h1 className="sm:text-5xl text-2xl font-bold mb-4 leading-tight">
           <span className="bg-gradient-to-r from-purple-600 to-blue-400 bg-clip-text text-transparent">
             <>
               <ReactTyped
