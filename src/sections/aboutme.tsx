@@ -3,38 +3,37 @@ import React from "react";
 
 const Aboutme = () => {
   return (
-    <div className="sm:flex sm:flex-row flex flex-col  ">
-      <div
-        id="about"
-        className="my-12 lg:my-16 w-84 relative border border-white"
-      >
-        <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8 border ">
+    <div
+      id="about"
+      className="sm:flex sm:flex-row sm:py-24  flex flex-col justify-between lg:gap-8"
+    >
+      {/* About Me Section */}
+      <div className="my-4 w-full lg:w-1/2 relative ">
+        <div className="hidden lg:flex flex-col items-center absolute top-16 -right-14 ">
           <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
             ABOUT ME
           </span>
           <span className="h-36 w-[2px] bg-[#1a1443]"></span>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="order-2 lg:order-1 sm:m-3 text-justify">
-            <p className="font-medium mb-5  text-[#16f2b3] text-xl uppercase">
-              Who I am?
-            </p>
-            <p className="text-gray-200  text-sm sm:text-lg ">
-              MySelf Shreeram Mutukundu, I am a professional and enthusiastic
-              programmer in my daily life. I am a quick learner with a
-              self-learning attitude. I love to learn and explore new
-              technologies and am passionate about problem-solving. I love
-              almost all the stacks of web application development and love to
-              make the web more open to the world. My core skill is based on
-              JavaScript and I love to do most of the things using JavaScript. I
-              am available for any kind of job opportunity that suits my skills
-              and interests.
-            </p>
-          </div>
+        <div className="text-justify">
+          <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase mx-4">
+            Who I am?
+          </p>
+          <p className="text-gray-200 text-sm sm:text-lg sm:w-3/4 w-fit mx-4">
+            MySelf Shreeram Mutukundu, I am a professional and enthusiastic
+            programmer in my daily life. I am a quick learner with a
+            self-learning attitude. I love to learn and explore new technologies
+            and am passionate about problem-solving. I love almost all the
+            stacks of web application development and love to make the web more
+            open to the world. My core skill is based on JavaScript and I love
+            to do most of the things using JavaScript. I am available for any
+            kind of job opportunity that suits my skills and interests.
+          </p>
         </div>
       </div>
-      <div className="order-1 border-white lg:order-2 md:w-1/2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] lg:pl-8">
-        <div className="flex flex-row ">
+
+      <div className="order-1 lg:order-2 sm:mx-3 m-3 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
+        <div className="flex flex-row">
           <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
           <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
         </div>
@@ -45,19 +44,18 @@ const Aboutme = () => {
             <div className="h-3 w-3 rounded-full bg-green-200"></div>
           </div>
         </div>
-
-        <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8 ">
+        <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
           <code className="font-mono text-xs md:text-sm lg:text-base">
             <div className="blink">
               <span className="mr-2 text-pink-500">const</span>
-              <span className="mr-2 text-white">coder</span>
+              <span className="mr-2 text-white">Coder</span>
               <span className="mr-2 text-pink-500">=</span>
               <span className="text-gray-400">{"{"}</span>
             </div>
             <div>
               <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
               <span className="text-gray-400">{`'`}</span>
-              <span className="text-amber-300">Abu Said</span>
+              <span className="text-amber-300">Shreeram Mutukundu</span>
               <span className="text-gray-400">{`',`}</span>
             </div>
             <div className="ml-4 lg:ml-8 mr-2">
@@ -71,15 +69,16 @@ const Aboutme = () => {
               <span className="text-gray-400">{"', '"}</span>
               <span className="text-amber-300">Express</span>
               <span className="text-gray-400">{"', '"}</span>
-              <span className="text-amber-300">NestJS</span>
+              <span className="text-amber-300">Javascript</span>
               <span className="text-gray-400">{"', '"}</span>
-              <span className="text-amber-300">MySql</span>
+              <span className="text-amber-300">Java</span>
               <span className="text-gray-400">{"', '"}</span>
-              <span className="text-amber-300">MongoDB</span>
+              <span className="text-amber-300">Python</span>
+              <span className="text-gray-400">{"', '"}</span>
+              <span className="text-amber-300">PostgresSQL</span>
               <span className="text-gray-400">{"', '"}</span>
               <span className="text-amber-300">Docker</span>
-              <span className="text-gray-400">{"', '"}</span>
-              <span className="text-amber-300">AWS</span>
+
               <span className="text-gray-400">{"'],"}</span>
             </div>
             <div>

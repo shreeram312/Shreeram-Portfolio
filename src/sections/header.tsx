@@ -16,9 +16,10 @@ export default function Header() {
   }, [pathname]);
 
   const navItems = [
-    { name: "About", path: "/home" },
-    { name: "Projects", path: "/projects" },
-    { name: "Experiences", path: "/experiences" },
+    { name: "Home", path: "/home" },
+    { name: "About", path: "#about" },
+    { name: "Skills", path: "#skills" },
+    { name: "Projects", path: "#projects" },
   ];
 
   return (
@@ -78,12 +79,10 @@ export default function Header() {
             <div key={item.name} className="relative">
               <button
                 className={`relative text-white p-2 md:p-2 rounded-lg transition-all ease-in-out duration-500 overflow-hidden ${
-                  active === item.path ||
-                  (item.path === "#contact" && active === "/")
-                    ? "bg-slate-700"
-                    : ""
+                  active === item.path ? "bg-gray-500" : ""
                 }`}
                 onClick={() => {
+                  setActive(item.path);
                   if (item.path === "#contact") {
                     document
                       .getElementById("contact")
