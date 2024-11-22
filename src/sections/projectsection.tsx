@@ -8,7 +8,8 @@ const projectsData = [
   {
     id: 1,
     title: "Twitter-clone",
-    description: "A chatbot which increases organizational efficiency",
+    description:
+      "A full-stack Twitter clone built with Next.js, Express.js Prisma, and PostGreSQL. It features user authentication, posting tweets, follow/unfollow functionality,using  modern technologies for efficient data handling and a responsive UI",
     image: "/assets/twitter.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/shreeram312/TwitterClone",
@@ -17,18 +18,20 @@ const projectsData = [
   {
     id: 2,
     title: "Delicious-Bites: Food Ordering",
-    description: "Expense tracking app to gain control over finances",
+    description:
+      "DeliciousBites is a comprehensive MERN stack food delivery app that allows users Signup,Signin and explore, order, and enjoy a wide variety of cuisines. With a user-friendly interface and seamless delivery services",
     image: "/assets/food.png",
-    tag: ["All", "Mobile"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/Ritwikgotbugs/Xpens",
     previewUrl: "https://github.com/Ritwikgotbugs/Xpens/releases/tag/Xpens",
   },
   {
     id: 3,
     title: "Smart Proctoring: AI Exam System",
-    description: "An engaging social media platform to upload ",
+    description:
+      "The AI Proctored Exam System is a web-based application designed to enhance the integrity of online exams using AI techniques. This system uses TensorFlow.js for real-time face, object, mobile detection providing a secure environment for users.",
     image: "/assets/ai.png",
-    tag: ["All", "Mobile"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/shreeram312/AI-Proctored-System",
     previewUrl: "https://github.com/shreeram312/AI-Proctored-System",
   },
@@ -37,7 +40,7 @@ const projectsData = [
     title: "Chat Application",
     description: "A detailed weather forecasting web app",
     image: "https://i.postimg.cc/FHrXqrKH/climate.png",
-    tag: ["All", "Web"],
+    tag: ["All", "ML"],
     gitUrl: "https://github.com/Ritwikgotbugs/cli-mate",
     previewUrl: "https://cli-mate-react.netlify.app/",
   },
@@ -79,11 +82,11 @@ const ProjectsSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
+          name="ML"
+          isSelected={tag === "ML"}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12 ">
+      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12 p-5   ">
         {filteredProjects.map((project, index) => (
           <motion.li
             key={index}

@@ -44,14 +44,14 @@ export default function Header() {
           className="relative border-2 border-slate-700 bg-opacity-85 group-hover:border-transparent bg-slate-900 text-white text-lg py-1 px-2 md:py-2 md:px-4 rounded-xl md:text-base z-10 transition-all duration-300
         bg-clip-padding"
         >
-          Résumé
+          Resume
         </button>
       </div>
 
       {/*Desktop View*/}
       <div className="hidden md:flex items-center space-x-4">
         <img
-          src="/assets/avatar.jpg"
+          src="https://avatars.githubusercontent.com/u/126177107?v=4"
           alt="Profile Image"
           className="w-10 h-10 md:w-12 md:h-12 object-cover rounded-full transition-shadow duration-300 hover:shadow-2xl hover:shadow-purple-500"
         />
@@ -67,7 +67,7 @@ export default function Header() {
             className="relative border-2 border-slate-700 bg-opacity-85 group-hover:border-transparent bg-slate-900 text-white py-1 px-2 md:py-2 md:px-4 rounded-2xl text-sm md:text-base z-10 transition-all duration-300
         bg-clip-padding"
           >
-            Résumé
+            Resume
           </button>
         </div>
       </div>

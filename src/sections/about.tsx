@@ -37,37 +37,35 @@ export const About = () => {
           <div className="flex flex-row gap-x-4 mt-6">
             <FaGithub
               size={25}
-              onClick={() =>
-                window.open("https://www.github.com/Ritwikgotbugs")
-              }
+              onClick={() => window.open("https://github.com/shreeram312")}
               className="transform transition-transform hover:-translate-y-1 cursor-pointer"
             />
             <FaLinkedin
               size={25}
               onClick={() =>
                 window.open(
-                  "https://www.linkedin.com/in/ritwik-sharma-8714b4221/"
+                  "https://www.linkedin.com/in/shreeram-mutukundu-30094028a/"
                 )
               }
               className="transform transition-transform hover:-translate-y-1 cursor-pointer"
             />
-            <FaInstagram
+            {/* <FaInstagram
               size={25}
               onClick={() =>
                 window.open("https://www.instagram.com/ritwikksharma_/")
               }
               className="transform transition-transform hover:-translate-y-1 cursor-pointer"
-            />
+            /> */}
             <BsTwitterX
               size={25}
-              onClick={() => window.open("https://x.com/Ritwikshar")}
+              onClick={() => window.open("https://x.com/realshreeram312")}
               className="transform transition-transform hover:-translate-y-1 cursor-pointer"
             />
           </div>
           <p
             className="underline text-sm sm:text-xl cursor-pointer mt-2 mb-8"
             onClick={() =>
-              (window.location.href = "mailto:shritwik04@gmail.com")
+              (window.location.href = "mailto:shreerammutukundu.2003@gmail.com")
             }
           >
             shreerammutukundu.2003@gmail.com{" "}
