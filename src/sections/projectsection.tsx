@@ -40,9 +40,29 @@ const projectsData = [
     title: "Chat Application",
     description: "Chat App",
     image: "https://i.postimg.cc/FHrXqrKH/climate.png",
-    tag: ["All", "ML"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/shreeram312/Chat-App",
     previewUrl: "https://github.com/shreeram312/Chat-App",
+  },
+  {
+    id: 5,
+    title: "Duplicate Question Pair",
+    description: "NLP Based Project",
+    image: "/assets/quora.png",
+    tag: ["All", "ML"],
+    gitUrl: "https://github.com/shreeram312/Email-Sms-Spam-Detection-System",
+    previewUrl:
+      "https://github.com/shreeram312/Email-Sms-Spam-Detection-System",
+  },
+  {
+    id: 6,
+    title: "Email-Spam Detection System",
+    description: "Email Project",
+    image: "/assets/email.jpg",
+    tag: ["All", "ML"],
+    gitUrl: "https://github.com/shreeram312/Email-Sms-Spam-Detection-System",
+    previewUrl:
+      "https://github.com/shreeram312/Email-Sms-Spam-Detection-System",
   },
 ];
 
