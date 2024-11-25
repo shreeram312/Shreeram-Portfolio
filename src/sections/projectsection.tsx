@@ -22,8 +22,8 @@ const projectsData = [
       "DeliciousBites is a comprehensive MERN stack food delivery app that allows users Signup,Signin and explore, order, and enjoy a wide variety of cuisines. With a user-friendly interface and seamless delivery services",
     image: "/assets/food.png",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/Ritwikgotbugs/Xpens",
-    previewUrl: "https://github.com/Ritwikgotbugs/Xpens/releases/tag/Xpens",
+    gitUrl: "https://delicious-bites-app.vercel.app/",
+    previewUrl: "https://github.com/shreeram312/DeliciousBites-App",
   },
   {
     id: 3,
@@ -41,8 +41,8 @@ const projectsData = [
     description: "A detailed weather forecasting web app",
     image: "https://i.postimg.cc/FHrXqrKH/climate.png",
     tag: ["All", "ML"],
-    gitUrl: "https://github.com/Ritwikgotbugs/cli-mate",
-    previewUrl: "https://cli-mate-react.netlify.app/",
+    gitUrl: "https://github.com/shreeram312/Chat-App",
+    previewUrl: "https://github.com/shreeram312/Chat-App",
   },
 ];
 
