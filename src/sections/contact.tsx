@@ -36,11 +36,13 @@ export const Contact = () => {
       </div>
       <p
         className="underline cursor-pointer"
-        onClick={() => (window.location.href = "mailto:shritwik04@gmail.com")}
+        onClick={() =>
+          (window.location.href = "mailto:shreerammutukundu.2003@gmail.com")
+        }
       >
-        shritwik04@gmail.com
+        shreerammutukundu.2003@gmail.com
       </p>
-      <p className="text-center font-mono">Made with ❤️ by Ritwik Sharma</p>
+      <p className="text-center font-mono">@shreeram312</p>
       <div className="text-right">
         <p className="font-semibold items-center justify-center">
           Crafted with{" "}
