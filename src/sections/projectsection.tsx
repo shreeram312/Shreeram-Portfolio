@@ -38,7 +38,7 @@ const projectsData = [
   {
     id: 4,
     title: "Chat Application",
-    description: "A detailed weather forecasting web app",
+    description: "Chat App",
     image: "https://i.postimg.cc/FHrXqrKH/climate.png",
     tag: ["All", "ML"],
     gitUrl: "https://github.com/shreeram312/Chat-App",
