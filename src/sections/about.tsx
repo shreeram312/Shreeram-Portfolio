@@ -8,8 +8,10 @@ export const About = () => {
   return (
     <section className="px-4 flex flex-col md:flex-row  items-center justify-between">
       <div className="md:w-1/2 mx-3 ">
-        <h1 className="font-mono text-2xl sm:text-4xl my-4 sm:my-0 ">Hello</h1>
-        <h1 className="text-4xl  font-bold leading-relaxed">
+        <h1 className="font-mono text-2xl sm:text-4xl my-5  sm:my-2  ">
+          Hello
+        </h1>
+        <h1 className="text-4xl -my-3 sm:my-2   font-bold leading-relaxed">
           I&apos;m Shreeram Mutukundu,
         </h1>
         <h1 className="sm:text-5xl  text-2xl font-bold mb-2 leading-tight">
