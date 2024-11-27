@@ -38,7 +38,7 @@ export default function Header() {
         <button
           onClick={() =>
             window.open(
-              "https://drive.google.com/file/d/1D6L4o4Q-RUk45quVT5NwM0K2FOhgLsuO/view"
+              "https://drive.google.com/file/d/1aNetix7MRQa01yi7vjlxsBEXtbYl4ndR/view"
             )
           }
           className="relative border-2 border-slate-700 bg-opacity-85 group-hover:border-transparent bg-slate-900 text-white text-lg py-1 px-2 md:py-2 md:px-4 rounded-xl md:text-base z-10 transition-all duration-300
@@ -61,7 +61,7 @@ export default function Header() {
           <button
             onClick={() =>
               window.open(
-                "https://drive.google.com/file/d/1D6L4o4Q-RUk45quVT5NwM0K2FOhgLsuO/view"
+                "https://drive.google.com/file/d/1aNetix7MRQa01yi7vjlxsBEXtbYl4ndR/view"
               )
             }
             className="relative border-2 border-slate-700 bg-opacity-85 group-hover:border-transparent bg-slate-900 text-white py-1 px-2 md:py-2 md:px-4 rounded-2xl text-sm md:text-base z-10 transition-all duration-300
