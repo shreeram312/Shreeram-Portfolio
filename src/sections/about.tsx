@@ -6,15 +6,15 @@ import { ReactTyped } from "react-typed";
 
 export const About = () => {
   return (
-    <section className="px-4 flex flex-col md:flex-row  items-center justify-between">
-      <div className="md:w-1/2 mx-3 ">
+    <section className="px-4 flex flex-col md:flex-row  items-center justify-between ">
+      <div className="md:w-1/2 mx-3 sm:p-6 p-2">
         <h1 className="font-mono text-2xl sm:text-4xl my-5  sm:my-2  ">
           Hello
         </h1>
-        <h1 className="text-4xl -my-3 sm:my-2   font-bold leading-relaxed">
-          I&apos;m Shreeram Mutukundu,
+        <h1 className="text-2xl sm:text-4xl -my-3 sm:my-2  font-bold leading-relaxed">
+          I&apos;m Shreeram Mutukundu
         </h1>
-        <h1 className="sm:text-5xl  text-2xl font-bold mb-2 leading-tight">
+        <h1 className="sm:text-4xl  text-2xl font-bold my-3 leading-tight">
           <span className="bg-gradient-to-r from-purple-600 to-blue-400 bg-clip-text text-transparent ">
             <>
               <ReactTyped
@@ -36,7 +36,7 @@ export const About = () => {
           scratch, and something which could potentially help a million of us!
         </p> */}
         <div className="flex flex-col gap-0">
-          <div className="flex flex-row gap-x-4 mt-6">
+          <div className="flex flex-row gap-x-2 mt-6">
             <FaGithub
               size={25}
               onClick={() => window.open("https://github.com/shreeram312")}
@@ -65,12 +65,12 @@ export const About = () => {
             />
           </div>
           <p
-            className="underline text-sm sm:text-xl cursor-pointer mt-2 mb-8"
+            className="hidden sm:block underline text-sm sm:text-xl cursor-pointer my-3 mb-8"
             onClick={() =>
               (window.location.href = "mailto:shreerammutukundu.2003@gmail.com")
             }
           >
-            shreerammutukundu.2003@gmail.com{" "}
+            shreerammutukundu.2003@gmail.com
           </p>
         </div>
       </div>

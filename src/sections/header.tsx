@@ -70,6 +70,9 @@ export default function Header() {
             Resume
           </button>
         </div>
+        <p className="text-2xl font-semibold bg-gradient-to-r from-purple-600 to-blue-400 bg-clip-text text-transparent">
+          &lt;Shreeram /&gt;
+        </p>
       </div>
 
       {/* Navbar Links */}
