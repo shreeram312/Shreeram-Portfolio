@@ -2,15 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import { FloatingDock } from "@/components/ui/floating-dock";
-import {
-  IconBrandGithub,
-  IconBrandX,
-  IconExchange,
-  IconHome,
-  IconNewSection,
-  IconTerminal2,
-} from "@tabler/icons-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,9 +25,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {children}
-
         <Analytics />
-        <div className="flex items-center justify-center h-[35rem] w-full"></div>
       </body>
     </html>
   );

@@ -16,7 +16,6 @@ export default function CategoriesPage() {
 
       <SkillsPage />
       <ProjectsSection />
-
       <div className="w-screen p-3 example sm:w-full flex justify-center items-center">
         <GitHubCalendar username="shreeram312" />
       </div>
