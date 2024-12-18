@@ -3,6 +3,8 @@ import { BsTwitterX } from "react-icons/bs";
 import { BiSolidQuoteLeft } from "react-icons/bi";
 import { TfiEmail } from "react-icons/tfi";
 import { ReactTyped } from "react-typed";
+import { BackgroundLines } from "@/components/ui/background-lines";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 export const About = () => {
   return (
