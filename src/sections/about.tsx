@@ -22,7 +22,11 @@ export const About = () => {
         <h1 className="sm:text-5xl text-2xl font-bold my-5 leading-tight tracking-wider">
           <span className="mr-4 bg-gradient-to-r from-purple-600 to-blue-400 bg-clip-text text-transparent">
             <ReactTyped
-              strings={["Full Stack Developer", "ML NLP Enthusiast"]}
+              strings={[
+                "Full Stack Developer",
+                "Devops Enthusiast",
+                "Gen-AI Dev",
+              ]}
               typeSpeed={100}
               backSpeed={50}
               backDelay={1000}

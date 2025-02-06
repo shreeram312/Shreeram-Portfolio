@@ -10,7 +10,7 @@ const Aboutme = () => {
       {/* About Me Section */}
       <div className="my-4 w-full lg:w-1/2 relative ">
         <div className="hidden lg:flex flex-col items-center absolute top-16 -right-14 ">
-          <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
+          <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 my-1 -mx-2 text-xl rounded-md">
             ABOUT ME
           </span>
           <span className="h-36 w-[2px] bg-[#1a1443]"></span>
@@ -19,7 +19,7 @@ const Aboutme = () => {
           <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase mx-4">
             Who I am?
           </p>
-          <p className="text-gray-200 text-sm sm:text-lg sm:w-3/4 w-fit mx-4">
+          <p className="text-gray-200 text-sm sm:text-lg sm:w-11/12 w-fit mx-4">
             Myself Shreeram Mutukundu a final-year student with a strong
             foundation in Full-stack application development and good knowledge
             of Natural language processing (NLP) and Machine learning.

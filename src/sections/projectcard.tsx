@@ -10,13 +10,15 @@ const ProjectCard = ({
   previewUrl,
 }: any) => {
   return (
-    <div className="rounded-xl overflow-hidden bg-[#181818] m-4">
+    <div className="rounded-xl overflow-hidden bg-[#181818]  p-2">
       <div
-        className="h-52 w-full md:h-72 relative group"
+        className="h-72  md:h-72 relative group p-2"
         style={{
           backgroundImage: `url(${imgUrl})`,
-          backgroundSize: "cover",
+          backgroundSize: "cover", // Ensures full coverage
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          paddingRight: "10px",
         }}
       >
         <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">

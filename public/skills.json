@@ -36,6 +36,7 @@
     "category": "DevOps & Tools",
     "tech": [
       { "name": "Docker", "iconUrl": "/assets/docker.png" },
+      { "name": "Linux", "iconUrl": "/assets/linux.jpg" },
       { "name": "Postman", "iconUrl": "/assets/postman.png" }
     ]
   }
