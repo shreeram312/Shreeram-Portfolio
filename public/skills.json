@@ -1,11 +1,11 @@
 [
   {
-    "category": "Languages",
+    "category": "Core Languages",
     "tech": [
-      { "name": "Java", "iconUrl": "/assets/java.png" },
-      { "name": "JavaScript", "iconUrl": "/assets/javascript.png" },
       { "name": "TypeScript", "iconUrl": "/assets/typescript.png" },
-      { "name": "Python", "iconUrl": "/assets/python.png" }
+      { "name": "JavaScript", "iconUrl": "/assets/javascript.png" },
+      { "name": "Python", "iconUrl": "/assets/python.png" },
+      { "name": "Java", "iconUrl": "/assets/java.png" }
     ]
   },
   {
@@ -17,27 +17,28 @@
     ]
   },
   {
-    "category": "Backend & DB",
+    "category": "Backend & Database",
     "tech": [
       { "name": "Node.js", "iconUrl": "/assets/node.png" },
       { "name": "Express", "iconUrl": "/assets/express.png" },
-
+      { "name": "NestJS", "iconUrl": "/assets/nest.png" },
       { "name": "PostgreSQL", "iconUrl": "/assets/postgres.png" },
       { "name": "MongoDB", "iconUrl": "/assets/mongo.png" },
-
       { "name": "Prisma", "iconUrl": "/assets/prisma.jpg" }
     ]
   },
-  {
-    "category": "App Development",
-    "tech": [{ "name": "React-Native", "iconUrl": "/assets/react.png" }]
-  },
+
   {
     "category": "DevOps & Tools",
     "tech": [
       { "name": "Docker", "iconUrl": "/assets/docker.png" },
+      { "name": "Git", "iconUrl": "/assets/git.png" },
       { "name": "Linux", "iconUrl": "/assets/linux.jpg" },
-      { "name": "Postman", "iconUrl": "/assets/postman.png" }
+      { "name": "Vercel-AI-SDK", "iconUrl": "/assets/aisdk.png" }
     ]
+  },
+  {
+    "category": "Payment Gateways",
+    "tech": [{ "name": "Stripe", "iconUrl": "/assets/stripe.png" }]
   }
 ]

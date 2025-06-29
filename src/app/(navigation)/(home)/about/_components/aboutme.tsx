@@ -1,3 +1,4 @@
+"use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Badge } from "@/components/ui/badge";
@@ -93,47 +94,23 @@ const Aboutme = () => {
       variants={containerVariants}
       initial="initial"
       animate={isContainerInView ? "animate" : "initial"}
-      className="py-12 sm:py-16 lg:py-20 px-3 sm:px-4 w-full"
+      className="py-20 px-4 max-w-7xl mx-auto"
     >
       {/* Section Header */}
-      <motion.div
-        variants={textVariants}
-        className="text-center mb-8 sm:mb-12 lg:mb-16"
-      >
-        <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-        >
-          About{" "}
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Me
-          </span>
-        </motion.h2>
-        <motion.div
-          className="h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto w-20 sm:w-24"
-          variants={lineVariants}
-        />
-      </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Text Content */}
-        <motion.div
-          ref={textRef}
-          variants={textVariants}
-          className="space-y-4 sm:space-y-6"
-        >
+        <motion.div ref={textRef} variants={textVariants} className="space-y-6">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="space-y-3 sm:space-y-4"
+            className="space-y-4"
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-white">
+            <h3 className="text-2xl font-bold text-white  my-10 sm:my-0">
               Who I Am?
             </h3>
-            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+            <p className="text-gray-300 text-lg leading-relaxed">
               Hey, I'm{" "}
               <span className="text-purple-400 font-semibold">
                 Shreeram Mutukundu
@@ -142,7 +119,7 @@ const Aboutme = () => {
               application development, and hands-on experience working with
               Generative AI and agents.
             </p>
-            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+            <p className="text-gray-300 text-lg leading-relaxed">
               I'm passionate about building clean, efficient, and user-centered
               applications. Always leveling up, experimenting with new tech, and
               solving real-world problems.
@@ -154,45 +131,15 @@ const Aboutme = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="p-4 sm:p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-xl"
+            className="p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-xl"
           >
-            <p className="text-purple-300 font-mono text-sm sm:text-lg text-center">
+            <p className="text-purple-300 font-mono text-lg text-center">
               🚀{" "}
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-bold">
                 On the grind to become a cracked dev
               </span>{" "}
               — one build at a time! 💻
             </p>
-          </motion.div>
-
-          {/* Skills Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="space-y-3 sm:space-y-4"
-          >
-            <h4 className="text-lg sm:text-xl font-semibold text-white">
-              Tech Stack
-            </h4>
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={skill}
-                  variants={skillVariants}
-                  initial="initial"
-                  animate={isTextInView ? "animate" : "initial"}
-                  transition={{ delay: 1.2 + index * 0.1 }}
-                >
-                  <Badge
-                    variant="outline"
-                    className="border-purple-500/50 text-purple-300 hover:bg-purple-500/20 transition-colors text-xs sm:text-sm"
-                  >
-                    {skill}
-                  </Badge>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </motion.div>
 
@@ -220,7 +167,7 @@ const Aboutme = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.8 }}
-                className="space-y-4 font-mono text-sm"
+                className="space-y-3 font-mono text-sm"
               >
                 <div className="flex items-center">
                   <span className="text-purple-400">const</span>
@@ -229,32 +176,37 @@ const Aboutme = () => {
                   <span className="text-gray-400 ml-2">{`{`}</span>
                 </div>
 
-                <div className="ml-4 space-y-3">
+                <div className="ml-4">
                   <div className="flex items-center">
                     <span className="text-blue-400">name:</span>
                     <span className="text-green-400 ml-2">{`'Shreeram Mutukundu'`}</span>
                     <span className="text-gray-400">,</span>
                   </div>
 
-                  <div className="flex items-center">
+                  <div className="flex items-center mt-2">
                     <span className="text-blue-400">role:</span>
                     <span className="text-green-400 ml-2">{`'Full Stack Engineer'`}</span>
                     <span className="text-gray-400">,</span>
                   </div>
 
-                  <div className="flex items-center">
+                  <div className="flex items-center mt-2">
                     <span className="text-blue-400">passion:</span>
-                    <span className="text-green-400 ml-2">{`'Building amazing things'`}</span>
+                    <span className="text-green-400 ml-2">{`'Building Cool Products '`}</span>
+                    <span className="text-gray-400">,</span>
+                  </div>
+                  <div className="flex items-center mt-2">
+                    <span className="text-blue-400">goal:</span>
+                    <span className="text-green-400 ml-2">{`'Shipping Daily on Production'`}</span>
                     <span className="text-gray-400">,</span>
                   </div>
 
-                  <div className="flex items-center">
+                  <div className="flex items-center mt-2">
                     <span className="text-blue-400">status:</span>
                     <span className="text-yellow-400 ml-2">{`'Always Learning'`}</span>
                     <span className="text-gray-400">,</span>
                   </div>
 
-                  <div className="pt-2">
+                  <div className="mt-3">
                     <span className="text-purple-400">hireable</span>
                     <span className="text-gray-400">:</span>
                     <span className="text-purple-400 ml-2">()</span>

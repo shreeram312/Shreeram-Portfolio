@@ -66,10 +66,10 @@ export default function RootLayout({
       <div>{children}</div>
 
       {/* Persistent FloatingDock */}
-
+      {/* 
       <div className="flex  items-center justify-center w-full fixed bottom-8 lg:bottom-8 z-50 shadow-lg">
         <FloatingDock items={links} />
-      </div>
+      </div> */}
     </div>
   );
 }
