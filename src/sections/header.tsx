@@ -16,10 +16,10 @@ export default function Header() {
   }, [pathname]);
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Skills", path: "/skills" },
-    { name: "Projects", path: "/projects" },
+    { name: "Home", path: "/home" },
+    { name: "About", path: "#about" },
+    { name: "Skills", path: "#skills" },
+    { name: "Projects", path: "#projects" },
   ];
 
   return (
@@ -27,7 +27,7 @@ export default function Header() {
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2e22e0] via-[#cb03f3] to-[#e02aff]"></div>
 
       {/*Mobile View*/}
-      {/* <div className="flex justify-center gap-x-5 items-center w-full md:hidden mt-4 ">
+      <div className="flex justify-center gap-x-5 items-center w-full md:hidden mt-4 ">
         <div className="flex items-center">
           <img
             src="https://avatars.githubusercontent.com/u/126177107?v=4"
@@ -46,7 +46,7 @@ export default function Header() {
         >
           Resume
         </button>
-      </div> */}
+      </div>
 
       {/*Desktop View*/}
       <div className="hidden md:flex items-center space-x-4">

@@ -1,303 +1,146 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
+import React from "react";
 
 const Aboutme = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const codeRef = useRef<HTMLDivElement>(null);
-
-  const isContainerInView = useInView(containerRef, {
-    once: true,
-    margin: "-100px",
-  });
-  const isTextInView = useInView(textRef, { once: true, margin: "-50px" });
-  const isCodeInView = useInView(codeRef, { once: true, margin: "-50px" });
-
-  const containerVariants = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const textVariants = {
-    initial: { opacity: 0, y: 30 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const codeVariants = {
-    initial: { opacity: 0, scale: 0.95 },
-    animate: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    initial: { width: 0 },
-    animate: {
-      width: "100%",
-      transition: {
-        duration: 1.5,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  const skillVariants = {
-    initial: { opacity: 0, scale: 0.8 },
-    animate: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const skills = [
-    "React",
-    "NextJS",
-    "TypeScript",
-    "Node.js",
-    "Express",
-    "Python",
-    "Java",
-    "PostgreSQL",
-    "Docker",
-    "AWS",
-  ];
-
   return (
-    <motion.div
-      ref={containerRef}
+    <div
       id="about"
-      variants={containerVariants}
-      initial="initial"
-      animate={isContainerInView ? "animate" : "initial"}
-      className="py-12 sm:py-16 lg:py-20 px-3 sm:px-4 w-full"
+      className="sm:flex sm:flex-row sm:py-24  flex flex-col justify-between lg:gap-8"
     >
-      {/* Section Header */}
-      <motion.div
-        variants={textVariants}
-        className="text-center mb-8 sm:mb-12 lg:mb-16"
-      >
-        <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-        >
-          About{" "}
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Me
+      {/* About Me Section */}
+      <div className="my-4 w-full lg:w-1/2 relative ">
+        <div className="hidden lg:flex flex-col items-center absolute top-16 -right-14 ">
+          <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 my-1 -mx-2 text-xl rounded-md">
+            ABOUT ME
           </span>
-        </motion.h2>
-        <motion.div
-          className="h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto w-20 sm:w-24"
-          variants={lineVariants}
-        />
-      </motion.div>
-
-      <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-        {/* Left Side - Text Content */}
-        <motion.div
-          ref={textRef}
-          variants={textVariants}
-          className="space-y-4 sm:space-y-6"
-        >
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="space-y-3 sm:space-y-4"
-          >
-            <h3 className="text-xl sm:text-2xl font-bold text-white">
-              Who I Am?
-            </h3>
-            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-              Hey, I'm{" "}
-              <span className="text-purple-400 font-semibold">
-                Shreeram Mutukundu
-              </span>{" "}
-              — a passionate developer with a strong foundation in full-stack
-              application development, and hands-on experience working with
-              Generative AI and agents.
-            </p>
-            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-              I'm passionate about building clean, efficient, and user-centered
-              applications. Always leveling up, experimenting with new tech, and
-              solving real-world problems.
-            </p>
-          </motion.div>
-
-          {/* Cool one-liner */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="p-4 sm:p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-xl"
-          >
-            <p className="text-purple-300 font-mono text-sm sm:text-lg text-center">
-              🚀{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-bold">
-                On the grind to become a cracked dev
-              </span>{" "}
-              — one build at a time! 💻
-            </p>
-          </motion.div>
-
-          {/* Skills Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="space-y-3 sm:space-y-4"
-          >
-            <h4 className="text-lg sm:text-xl font-semibold text-white">
-              Tech Stack
-            </h4>
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={skill}
-                  variants={skillVariants}
-                  initial="initial"
-                  animate={isTextInView ? "animate" : "initial"}
-                  transition={{ delay: 1.2 + index * 0.1 }}
-                >
-                  <Badge
-                    variant="outline"
-                    className="border-purple-500/50 text-purple-300 hover:bg-purple-500/20 transition-colors text-xs sm:text-sm"
-                  >
-                    {skill}
-                  </Badge>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Right Side - Code Card */}
-        <motion.div ref={codeRef} variants={codeVariants} className="relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 1 }}
-            className="bg-gradient-to-br from-gray-900/90 to-gray-800/90 border border-gray-700/50 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-sm"
-          >
-            {/* Code Header */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-700/50">
-              <div className="flex space-x-2">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              </div>
-              <span className="text-gray-400 text-sm font-mono">coder.js</span>
-            </div>
-
-            {/* Code Content */}
-            <div className="p-6">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.2, duration: 0.8 }}
-                className="space-y-4 font-mono text-sm"
-              >
-                <div className="flex items-center">
-                  <span className="text-purple-400">const</span>
-                  <span className="text-white ml-2">developer</span>
-                  <span className="text-purple-400 ml-2">=</span>
-                  <span className="text-gray-400 ml-2">{`{`}</span>
-                </div>
-
-                <div className="ml-4 space-y-3">
-                  <div className="flex items-center">
-                    <span className="text-blue-400">name:</span>
-                    <span className="text-green-400 ml-2">{`'Shreeram Mutukundu'`}</span>
-                    <span className="text-gray-400">,</span>
-                  </div>
-
-                  <div className="flex items-center">
-                    <span className="text-blue-400">role:</span>
-                    <span className="text-green-400 ml-2">{`'Full Stack Engineer'`}</span>
-                    <span className="text-gray-400">,</span>
-                  </div>
-
-                  <div className="flex items-center">
-                    <span className="text-blue-400">passion:</span>
-                    <span className="text-green-400 ml-2">{`'Building amazing things'`}</span>
-                    <span className="text-gray-400">,</span>
-                  </div>
-
-                  <div className="flex items-center">
-                    <span className="text-blue-400">status:</span>
-                    <span className="text-yellow-400 ml-2">{`'Always Learning'`}</span>
-                    <span className="text-gray-400">,</span>
-                  </div>
-
-                  <div className="pt-2">
-                    <span className="text-purple-400">hireable</span>
-                    <span className="text-gray-400">:</span>
-                    <span className="text-purple-400 ml-2">()</span>
-                    <span className="text-gray-400">=</span>
-                    <span className="text-green-400 ml-2">{`true`}</span>
-                  </div>
-                </div>
-
-                <div className="text-gray-400">{`}`}</div>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Floating elements */}
-          <motion.div
-            className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
-            animate={{
-              y: [0, -10, 0],
-              rotate: [0, 180],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          <motion.div
-            className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
-            animate={{
-              y: [0, 10, 0],
-              rotate: [0, -180],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-          />
-        </motion.div>
+          <span className="h-36 w-[2px] bg-[#1a1443]"></span>
+        </div>
+        <div className="text-justify">
+          <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase mx-4">
+            Who I am?
+          </p>
+          <p className="text-gray-200 text-sm sm:text-lg sm:w-11/12 w-fit mx-4">
+            Myself Shreeram Mutukundu a final-year student with a strong
+            foundation in Full-stack application development and good knowledge
+            of Natural language processing (NLP) and Machine learning.
+            Passionate about building efficient and user-friendly applications,
+            I have worked on projects like a chat application, an AI proctored
+            exam system, a duplicate question pairs detection system using NLP,
+            a Twitter clone, and a food ordering app. With a self-motivated
+            approach to learning, I am constantly exploring new technologies to
+            enhance their skills and solve real world problems
+          </p>
+        </div>
       </div>
-    </motion.div>
+
+      <div className="order-1 lg:order-2 sm:mx-3 m-3 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
+        <div className="flex flex-row">
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
+          <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
+        </div>
+        <div className="px-4 lg:px-8 py-5">
+          <div className="flex flex-row space-x-2">
+            <div className="h-3 w-3 rounded-full bg-red-400"></div>
+            <div className="h-3 w-3 rounded-full bg-orange-400"></div>
+            <div className="h-3 w-3 rounded-full bg-green-200"></div>
+          </div>
+        </div>
+        <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
+          <code className="font-mono text-xs md:text-sm lg:text-base">
+            <div className="blink">
+              <span className="mr-2 text-pink-500">const</span>
+              <span className="mr-2 text-white">Coder</span>
+              <span className="mr-2 text-pink-500">=</span>
+              <span className="text-gray-400">{"{"}</span>
+            </div>
+            <div>
+              <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
+              <span className="text-gray-400">{`'`}</span>
+              <span className="text-amber-300">Shreeram Mutukundu</span>
+              <span className="text-gray-400">{`',`}</span>
+            </div>
+            <div className="ml-4 lg:ml-8 mr-2">
+              <span className=" text-white">skills:</span>
+              <span className="text-gray-400">{`['`}</span>
+              <span className="text-amber-300">React</span>
+              <span className="text-gray-400">{"', '"}</span>
+              <span className="text-amber-300">NextJS</span>
+              <span className="text-gray-400">{"', '"}</span>
+              <span className="text-amber-300">Redux</span>
+              <span className="text-gray-400">{"', '"}</span>
+              <span className="text-amber-300">Express</span>
+              <span className="text-gray-400">{"', '"}</span>
+              <span className="text-amber-300">Javascript</span>
+              <span className="text-gray-400">{"', '"}</span>
+              <span className="text-amber-300">Java</span>
+              <span className="text-gray-400">{"', '"}</span>
+              <span className="text-amber-300">Python</span>
+              <span className="text-gray-400">{"', '"}</span>
+              <span className="text-amber-300">PostgresSQL</span>
+              <span className="text-gray-400">{"', '"}</span>
+              <span className="text-amber-300">Docker</span>
+
+              <span className="text-gray-400">{"'],"}</span>
+            </div>
+            <div>
+              <span className="ml-4 lg:ml-8 mr-2 text-white">hardWorker:</span>
+              <span className="text-orange-400">true</span>
+              <span className="text-gray-400">,</span>
+            </div>
+            <div>
+              <span className="ml-4 lg:ml-8 mr-2 text-white">
+                quickLearner:
+              </span>
+              <span className="text-orange-400">true</span>
+              <span className="text-gray-400">,</span>
+            </div>
+            <div>
+              <span className="ml-4 lg:ml-8 mr-2 text-white">
+                problemSolver:
+              </span>
+              <span className="text-orange-400">true</span>
+              <span className="text-gray-400">,</span>
+            </div>
+            <div>
+              <span className="ml-4 lg:ml-8 mr-2 text-green-400">
+                hireable:
+              </span>
+              <span className="text-orange-400">function</span>
+              <span className="text-gray-400">{"() {"}</span>
+            </div>
+            <div>
+              <span className="ml-8 lg:ml-16 mr-2 text-orange-400">return</span>
+              <span className="text-gray-400">{`(`}</span>
+            </div>
+            <div>
+              <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
+              <span className="mr-2 text-white">hardWorker</span>
+              <span className="text-amber-300">&amp;&amp;</span>
+            </div>
+            <div>
+              <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
+              <span className="mr-2 text-white">problemSolver</span>
+              <span className="text-amber-300">&amp;&amp;</span>
+            </div>
+            <div>
+              <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
+              <span className="mr-2 text-white">skills.length</span>
+              <span className="mr-2 text-amber-300">&gt;=</span>
+              <span className="text-orange-400">5</span>
+            </div>
+            <div>
+              <span className="ml-8 lg:ml-16 mr-2 text-gray-400">{`);`}</span>
+            </div>
+            <div>
+              <span className="ml-4 lg:ml-8 text-gray-400">{`};`}</span>
+            </div>
+            <div>
+              <span className="text-gray-400">{`};`}</span>
+            </div>
+          </code>
+        </div>
+      </div>
+    </div>
   );
 };
 
