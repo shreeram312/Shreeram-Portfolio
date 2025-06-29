@@ -77,11 +77,11 @@ export const About = () => {
   };
 
   return (
-    <div className="relative overflow-hidden py-8 sm:py-12 lg:py-16 xl:py-20 px-3 sm:px-4 lg:px-6 xl:px-8 w-full">
+    <div className="relative overflow-hidden py-4 sm:py-8 lg:py-12 xl:py-16 px-4 sm:px-6 lg:px-8 xl:px-10 w-full">
       <motion.section
         ref={containerRef}
         style={{ y: springY, opacity: springOpacity, scale: springScale }}
-        className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-12 w-full"
+        className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-8 lg:gap-8 xl:gap-12 w-full"
       >
         {/* Left side - Text content */}
         <motion.div
@@ -89,29 +89,29 @@ export const About = () => {
           variants={staggerContainer}
           initial="initial"
           animate={isTextInView ? "animate" : "initial"}
-          className="flex-1 max-w-2xl order-2 lg:order-1 w-full "
+          className="flex-1 w-full max-w-none lg:max-w-2xl order-2 lg:order-1 px-0"
         >
           <motion.h1
             variants={textVariants}
-            className="font-mono text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl my-1 sm:my-6 lg:my-3 xl:my-4 text-gray-300 leading-tight "
+            className="font-mono text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl my-2 sm:my-4 lg:my-6 text-gray-300 leading-tight text-center lg:text-left"
           >
-            <span className="mr-1 sm:mr-2 lg:mr-4">Hello</span>
+            <span className="mr-2 sm:mr-3 lg:mr-4">Hello</span>
           </motion.h1>
 
           <motion.h1
             variants={textVariants}
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl -my-1 sm:-my-1 lg:-my-2 xl:-my-3 font-bold leading-tight text-white"
+            className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl -my-1 sm:-my-2 lg:-my-3 font-bold leading-tight text-white text-center lg:text-left"
           >
-            <span className="mr-1 sm:mr-2 lg:mr-4">I&apos;m</span>
-            <span className="mr-1 sm:mr-2 lg:mr-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4">I&apos;m</span>
+            <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Shreeram
             </span>
-            <span className="mr-1 sm:mr-2 lg:mr-4">Mutukundu</span>
+            <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4">Mutukundu</span>
           </motion.h1>
 
           <motion.div variants={textVariants} className="relative">
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold my-1 sm:my-2 lg:my-3 xl:my-4 leading-tight tracking-wide sm:tracking-wider">
-              <span className="mr-1 sm:mr-2 lg:mr-4 bg-gradient-to-r from-purple-600 to-blue-400 bg-clip-text text-transparent">
+            <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold my-2 sm:my-3 lg:my-4 leading-tight tracking-wide sm:tracking-wider text-center lg:text-left">
+              <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4 bg-gradient-to-r from-purple-600 to-blue-400 bg-clip-text text-transparent">
                 <ReactTyped
                   strings={[
                     "Full Stack Engineer",
@@ -130,18 +130,18 @@ export const About = () => {
 
           <motion.div
             variants={textVariants}
-            className="mt-3 sm:mt-4 lg:mt-6 xl:mt-8 space-y-2 sm:space-y-3 lg:space-y-4"
+            className="mt-4 sm:mt-6 lg:mt-8 xl:mt-10 space-y-3 sm:space-y-4 lg:space-y-5"
           >
             <Separator className="bg-gradient-to-r from-purple-500 to-blue-500" />
 
             {/* Cool one-liner */}
             <motion.div
-              className="mt-4 sm:mt-6 p-3 sm:p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-sm"
+              className="mt-4 sm:mt-6 p-3 sm:p-4 lg:p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-sm w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.5, duration: 0.8 }}
             >
-              <p className="text-gray-300 font-medium text-xs sm:text-base leading-relaxed">
+              <p className="text-gray-300 font-medium text-sm xs:text-base sm:text-base lg:text-lg leading-relaxed break-words text-center lg:text-left">
                 🚀{" "}
                 <span className="text-white font-semibold">
                   Trying to become a Cracked Dev
@@ -158,7 +158,7 @@ export const About = () => {
           variants={imageVariants}
           initial="initial"
           animate={isImageInView ? "animate" : "initial"}
-          className="flex justify-center relative group rounded-full flex-1 order-1 lg:order-2 w-full"
+          className="flex justify-center relative group rounded-full flex-1 order-1 lg:order-2 w-full h-[50vh] md:h-auto items-center"
         >
           {/* Glowing background effect */}
           <motion.div
@@ -185,7 +185,7 @@ export const About = () => {
             <img
               src="https://avatars.githubusercontent.com/u/126177107?v=4"
               alt="Shreeram Mutukundu"
-              className="rounded-full w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 2xl:w-80 2xl:h-80 border-2 sm:border-3 lg:border-4 border-purple-500/30 shadow-lg sm:shadow-xl lg:shadow-2xl shadow-purple-500/20 object-cover"
+              className="rounded-full w-64 h-64 xs:w-72 xs:h-72 sm:w-80 sm:h-80 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 border-2 sm:border-3 lg:border-4 border-purple-500/30 shadow-lg sm:shadow-xl lg:shadow-2xl shadow-purple-500/20 object-cover"
             />
 
             {/* Floating ring effect */}
@@ -205,7 +205,7 @@ export const About = () => {
 
           {/* Single floating element */}
           <motion.div
-            className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 lg:-top-4 lg:-right-4 w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
+            className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
             animate={{
               y: [0, -8, 0],
               rotate: [0, 180],

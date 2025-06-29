@@ -1,5 +1,4 @@
 "use client";
-
 import { About } from "@/sections/about";
 import Aboutme from "@/sections/aboutme";
 import GitHubCalendar from "react-github-calendar";
@@ -63,9 +62,13 @@ export default function CategoriesPage() {
         <About />
       </motion.div>
 
-      {/* GitHub Calendar - Responsive Container */}
-      <div className="w-screen  example sm:w-full sm:mx-36 ">
-        <GitHubCalendar username="shreeram312" />
+      {/* GitHub Calendar - Hidden on Mobile, Visible on Desktop */}
+      <div className="hidden md:block w-full px-4 sm:px-8 md:px-16 lg:px-36 py-8 flex justify-center items-center">
+        <div className="w-full max-w-full overflow-x-auto">
+          <div className="min-w-fit">
+            <GitHubCalendar username="shreeram312" />
+          </div>
+        </div>
       </div>
     </div>
   );
