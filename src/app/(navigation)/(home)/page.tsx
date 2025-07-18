@@ -63,11 +63,9 @@ export default function CategoriesPage() {
       </motion.div>
 
       {/* GitHub Calendar - Hidden on Mobile, Visible on Desktop */}
-      <div className="hidden md:block w-full px-4 sm:px-8 md:px-16 lg:px-36 py-8 flex justify-center items-center">
-        <div className="w-full max-w-full overflow-x-auto">
-          <div className="min-w-fit">
-            <GitHubCalendar username="shreeram312" />
-          </div>
+      <div className="w-screen p-3 example  ">
+        <div className="sm:w-auto sm:mx-32">
+          <GitHubCalendar username="shreeram312" />
         </div>
       </div>
     </div>

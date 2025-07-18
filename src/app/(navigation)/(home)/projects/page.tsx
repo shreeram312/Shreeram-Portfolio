@@ -36,10 +36,11 @@ const page = async () => {
     })) || [];
 
   return (
-    <div className="bg-black min-h-screen ">
-      <Projects projects={transformedProjects} />
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <div className="relative ">
+        <Projects projects={transformedProjects} />
+      </div>
     </div>
   );
 };
-
 export default page;

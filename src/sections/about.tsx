@@ -93,14 +93,14 @@ export const About = () => {
         >
           <motion.h1
             variants={textVariants}
-            className="font-mono text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl my-2 sm:my-4 lg:my-6 text-gray-300 leading-tight text-center lg:text-left"
+            className="font-mono text-xl sm:text-3xl  my-2 sm:my-4 lg:my-6 text-gray-300 leading-tight text-center lg:text-left"
           >
             <span className="mr-2 sm:mr-3 lg:mr-4">Hello</span>
           </motion.h1>
 
           <motion.h1
             variants={textVariants}
-            className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl -my-1 sm:-my-2 lg:-my-3 font-bold leading-tight text-white text-center lg:text-left"
+            className="text-2xl  sm:text-5xl  -my-1 sm:-my-2 lg:-my-3 font-bold leading-tight text-white text-center lg:text-left"
           >
             <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4">I&apos;m</span>
             <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
@@ -109,9 +109,9 @@ export const About = () => {
             <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4">Mutukundu</span>
           </motion.h1>
 
-          <motion.div variants={textVariants} className="relative">
-            <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold my-2 sm:my-3 lg:my-4 leading-tight tracking-wide sm:tracking-wider text-center lg:text-left">
-              <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4 bg-gradient-to-r from-purple-600 to-blue-400 bg-clip-text text-transparent">
+          <motion.div variants={textVariants} className="relative mt-2">
+            <p className=" text-2xl sm:text-5xl font-bold my-2 sm:my-3 lg:my-4 leading-tight tracking-wide sm:tracking-wider text-center lg:text-left">
+              <span className="mr-1 mt-4 xs:mr-2 sm:mr-3 lg:mr-4 bg-gradient-to-r from-purple-600 to-blue-400 bg-clip-text text-transparent">
                 <ReactTyped
                   strings={[
                     "Full Stack Engineer",
@@ -125,30 +125,7 @@ export const About = () => {
                   loop={true}
                 />
               </span>
-            </h1>
-          </motion.div>
-
-          <motion.div
-            variants={textVariants}
-            className="mt-4 sm:mt-6 lg:mt-8 xl:mt-10 space-y-3 sm:space-y-4 lg:space-y-5"
-          >
-            <Separator className="bg-gradient-to-r from-purple-500 to-blue-500" />
-
-            {/* Cool one-liner */}
-            <motion.div
-              className="mt-4 sm:mt-6 p-3 sm:p-4 lg:p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-sm w-full"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.5, duration: 0.8 }}
-            >
-              <p className="text-gray-300 font-medium text-sm xs:text-base sm:text-base lg:text-lg leading-relaxed break-words text-center lg:text-left">
-                🚀{" "}
-                <span className="text-white font-semibold">
-                  Trying to become a Cracked Dev
-                </span>{" "}
-                - One bug at a time! 💻
-              </p>
-            </motion.div>
+            </p>
           </motion.div>
         </motion.div>
 
@@ -176,7 +153,7 @@ export const About = () => {
 
           {/* Main image with hover effects */}
           <motion.div
-            className="relative z-10"
+            className="relative z-10 mt-4 sm:mt-1"
             whileHover={{
               scale: 1.05,
             }}

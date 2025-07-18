@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { FaGithub } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiArrowUpRight } from "react-icons/fi";
 
 interface Project {
   _id: string;
@@ -29,61 +29,111 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{ y: -5 }}
-      className="bg-black border border-gray-800 rounded-lg overflow-hidden group"
+      initial={{ opacity: 0, y: 60, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{
+        duration: 0.7,
+        delay: index * 0.15,
+        ease: [0.645, 0.045, 0.355, 1.0],
+      }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      className="group relative"
     >
-      {/* Project Image */}
-      <div className="relative h-48 overflow-hidden">
-        <img
-          src={project.img}
-          alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
-          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-4">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => window.open(project.githubUrl, "_blank")}
-              className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            >
-              <FaGithub size={20} />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => window.open(project.url, "_blank")}
-              className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            >
-              <FiExternalLink size={20} />
-            </motion.button>
+      {/* Glow effect */}
+      <div className="absolute -inset-0.5 border-2  rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+
+      {/* Main card */}
+      <div className="relative bg-black/40 backdrop-blur-xl border border-gray-800/50 rounded-2xl overflow-hidden group-hover:border-gray-700/50 transition-all duration-500">
+        {/* Project Image */}
+        <div className="relative h-56 overflow-hidden">
+          <img
+            src={project.img}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+          />
+
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+          {/* Hover overlay with buttons */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center">
+            <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 flex gap-4">
+              <motion.button
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => window.open(project.githubUrl, "_blank")}
+                className="p-4 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-white/40"
+              >
+                <FaGithub size={24} />
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.1, rotate: -5 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => window.open(project.url, "_blank")}
+                className="p-4 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-white/40"
+              >
+                <FiExternalLink size={24} />
+              </motion.button>
+            </div>
+          </div>
+
+          {/* Project number */}
+          <div className="absolute top-4 right-4">
+            <div className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center">
+              <span className="text-white text-sm font-bold font-mono">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Project Content */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-white mb-2 font-mono">
-          {project.title}
-        </h3>
-        <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-          {project.subtitle}
-        </p>
-
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2">
-          {project.stack.map((tech, techIndex) => (
-            <Badge
-              key={techIndex}
-              variant="secondary"
-              className="bg-gray-800 text-gray-300 border-gray-700 hover:bg-gray-700 transition-colors text-xs"
+        {/* Content */}
+        <div className="p-8">
+          {/* Title and external link */}
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-500 font-mono">
+              {project.title}
+            </h3>
+            <motion.div
+              whileHover={{ x: 4, y: -4 }}
+              className="opacity-0 group-hover:opacity-100 transition-all duration-300"
             >
-              {tech}
-            </Badge>
-          ))}
+              <FiArrowUpRight
+                className="text-gray-400 group-hover:text-white transition-colors duration-300"
+                size={20}
+              />
+            </motion.div>
+          </div>
+
+          {/* Description */}
+          <p className="text-gray-400 text-base mb-6 leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors duration-300">
+            {project.subtitle}
+          </p>
+
+          {/* Tech Stack */}
+          <div className="space-y-3">
+            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider font-mono">
+              Technologies
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {project.stack.map((tech, techIndex) => (
+                <motion.div
+                  key={techIndex}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.1 + techIndex * 0.05 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Badge
+                    variant="secondary"
+                    className="bg-gray-800/50 text-gray-300 border border-gray-700/50 hover:bg-gray-700/50 hover:border-gray-600/50 transition-all duration-300 text-xs px-3 py-1.5 font-mono backdrop-blur-sm"
+                  >
+                    {tech}
+                  </Badge>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -92,41 +142,79 @@ const ProjectCard = ({
 
 const Projects = ({ projects }: ProjectsProps) => {
   return (
-    <div className="min-h-screen bg-black ">
-      <div className="max-w-7xl ">
-        {/* Header */}
+    <div className="min-h-screen px-6 py-20">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8, ease: [0.645, 0.045, 0.355, 1.0] }}
+          className="text-center mb-20"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-mono">
-            My Projects
-          </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto font-mono">
-            A collection of my work, showcasing various technologies and
-            problem-solving approaches
-          </p>
+          {/* Subtitle */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mb-4"
+          >
+            <span className="text-purple-400 text-sm font-semibold uppercase tracking-widest font-mono">
+              Portfolio
+            </span>
+          </motion.div>
+
+          {/* Main Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-5xl md:text-7xl font-bold mb-6 font-mono"
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-400 to-cyan-400">
+              My Projects
+            </span>
+          </motion.h1>
+
+          {/* Decorative line */}
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "100px" }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="h-0.5 bg-gradient-to-r from-purple-600 to-cyan-600 mx-auto mt-8"
+          ></motion.div>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10"
+        >
           {projects &&
             projects.map((project, index) => (
               <ProjectCard key={project._id} project={project} index={index} />
             ))}
-        </div>
+        </motion.div>
 
         {/* Empty State */}
         {(!projects || projects.length === 0) && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-16"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-center py-20"
           >
-            <div className="text-gray-500 text-lg font-mono">
-              No projects available at the moment.
+            <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-12 max-w-md mx-auto">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <FiExternalLink className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4 font-mono">
+                No Projects Yet
+              </h3>
+              <p className="text-gray-400 font-light">
+                Projects are currently being added. Check back soon for updates.
+              </p>
             </div>
           </motion.div>
         )}
