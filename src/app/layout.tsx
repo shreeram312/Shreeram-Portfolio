@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
+import NextTopLoader from "nextjs-toploader";
+import { Databuddy } from "@databuddy/sdk";
+import GoogleAnalytics from "@/components/google-analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,10 +25,10 @@ export default function RootLayout({
           href="https://avatars.githubusercontent.com/u/126177107?v=4"
         />
       </head>
-      <body className={inter.className}>
-        {children}
-        <Analytics />
-      </body>
+      <Databuddy clientId="u0syca9wZFhc8JqnnlZVp" enableBatching={true} />
+      <GoogleAnalytics />
+
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

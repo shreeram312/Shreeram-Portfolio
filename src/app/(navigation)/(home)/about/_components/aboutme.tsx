@@ -94,7 +94,7 @@ const Aboutme = () => {
       variants={containerVariants}
       initial="initial"
       animate={isContainerInView ? "animate" : "initial"}
-      className="py-20 px-4 max-w-7xl mx-auto"
+      className="py-20 px-4 max-w-7xl mx-auto mt-20 lg:mt-32"
     >
       {/* Section Header */}
 
@@ -107,12 +107,12 @@ const Aboutme = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-bold text-white  my-10 sm:my-0">
+            <h3 className="text-2xl font-serif text-white  my-10 sm:my-0">
               Who I Am?
             </h3>
             <p className="text-gray-300 text-lg leading-relaxed">
               Hey, I'm{" "}
-              <span className="text-purple-400 font-semibold">
+              <span className="text-blue-400 font-semibold">
                 Shreeram Mutukundu
               </span>{" "}
               — a passionate developer with a strong foundation in full-stack
@@ -127,20 +127,6 @@ const Aboutme = () => {
           </motion.div>
 
           {/* Cool one-liner */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-xl"
-          >
-            <p className="text-purple-300 font-mono text-lg text-center">
-              🚀{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-bold">
-                On the grind to become a cracked dev
-              </span>{" "}
-              — one build at a time! 💻
-            </p>
-          </motion.div>
         </motion.div>
 
         {/* Right Side - Code Card */}
@@ -158,7 +144,9 @@ const Aboutme = () => {
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <span className="text-gray-400 text-sm font-mono">coder.js</span>
+              <span className="text-gray-400 text-sm font-serif">
+                developer.tsx
+              </span>
             </div>
 
             {/* Code Content */}
@@ -167,12 +155,12 @@ const Aboutme = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.8 }}
-                className="space-y-3 font-mono text-sm"
+                className="space-y-3 font-serif text-sm"
               >
                 <div className="flex items-center">
-                  <span className="text-purple-400">const</span>
+                  <span className="text-blue-400">const</span>
                   <span className="text-white ml-2">developer</span>
-                  <span className="text-purple-400 ml-2">=</span>
+                  <span className="text-blue-400 ml-2">=</span>
                   <span className="text-gray-400 ml-2">{`{`}</span>
                 </div>
 
@@ -207,9 +195,9 @@ const Aboutme = () => {
                   </div>
 
                   <div className="mt-3">
-                    <span className="text-purple-400">hireable</span>
+                    <span className="text-blue-400">hireable</span>
                     <span className="text-gray-400">:</span>
-                    <span className="text-purple-400 ml-2">()</span>
+                    <span className="text-blue-400 ml-2">()</span>
                     <span className="text-gray-400">=</span>
                     <span className="text-green-400 ml-2">{`true`}</span>
                   </div>
@@ -222,7 +210,7 @@ const Aboutme = () => {
 
           {/* Floating elements */}
           <motion.div
-            className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
+            className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"
             animate={{
               y: [0, -10, 0],
               rotate: [0, 180],
@@ -235,7 +223,7 @@ const Aboutme = () => {
           />
 
           <motion.div
-            className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
+            className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full"
             animate={{
               y: [0, 10, 0],
               rotate: [0, -180],

@@ -40,7 +40,7 @@ const ProjectCard = ({
       className="group relative"
     >
       {/* Glow effect */}
-      <div className="absolute -inset-0.5 border-2  rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+      <div className="absolute -inset-0.5 border-2 border-blue-500/20 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
 
       {/* Main card */}
       <div className="relative bg-black/40 backdrop-blur-xl border border-gray-800/50 rounded-2xl overflow-hidden group-hover:border-gray-700/50 transition-all duration-500">
@@ -80,7 +80,7 @@ const ProjectCard = ({
           {/* Project number */}
           <div className="absolute top-4 right-4">
             <div className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center">
-              <span className="text-white text-sm font-bold font-mono">
+              <span className="text-white text-sm font-serif ">
                 {String(index + 1).padStart(2, "0")}
               </span>
             </div>
@@ -91,7 +91,7 @@ const ProjectCard = ({
         <div className="p-8">
           {/* Title and external link */}
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-500 font-mono">
+            <h3 className="text-2xl font-serif text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all duration-500 ">
               {project.title}
             </h3>
             <motion.div
@@ -112,9 +112,6 @@ const ProjectCard = ({
 
           {/* Tech Stack */}
           <div className="space-y-3">
-            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider font-mono">
-              Technologies
-            </div>
             <div className="flex flex-wrap gap-2">
               {project.stack.map((tech, techIndex) => (
                 <motion.div
@@ -126,7 +123,7 @@ const ProjectCard = ({
                 >
                   <Badge
                     variant="secondary"
-                    className="bg-gray-800/50 text-gray-300 border border-gray-700/50 hover:bg-gray-700/50 hover:border-gray-600/50 transition-all duration-300 text-xs px-3 py-1.5 font-mono backdrop-blur-sm"
+                    className="bg-gray-800/50 text-gray-300 border border-gray-700/50 hover:bg-gray-700/50 hover:border-gray-600/50 transition-all duration-300 text-xs px-3 py-1.5 font-serif backdrop-blur-sm"
                   >
                     {tech}
                   </Badge>
@@ -142,7 +139,7 @@ const ProjectCard = ({
 
 const Projects = ({ projects }: ProjectsProps) => {
   return (
-    <div className="min-h-screen px-6 py-20">
+    <div className="min-h-screen px-6 py-20 mt-20 lg:mt-32">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div
@@ -152,25 +149,15 @@ const Projects = ({ projects }: ProjectsProps) => {
           className="text-center mb-20"
         >
           {/* Subtitle */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="mb-4"
-          >
-            <span className="text-purple-400 text-sm font-semibold uppercase tracking-widest font-mono">
-              Portfolio
-            </span>
-          </motion.div>
 
           {/* Main Title */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold mb-6 font-mono"
+            className="text-5xl md:text-7xl font-serif mb-6 "
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-400 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-400 to-cyan-400">
               My Projects
             </span>
           </motion.h1>
@@ -180,7 +167,7 @@ const Projects = ({ projects }: ProjectsProps) => {
             initial={{ width: 0 }}
             animate={{ width: "100px" }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="h-0.5 bg-gradient-to-r from-purple-600 to-cyan-600 mx-auto mt-8"
+            className="h-0.5 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto mt-8"
           ></motion.div>
         </motion.div>
 
@@ -206,10 +193,10 @@ const Projects = ({ projects }: ProjectsProps) => {
             className="text-center py-20"
           >
             <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-12 max-w-md mx-auto">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <FiExternalLink className="text-white" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4 font-mono">
+              <h3 className="text-xl  text-white mb-4 font-serif">
                 No Projects Yet
               </h3>
               <p className="text-gray-400 font-light">

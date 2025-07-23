@@ -1,62 +1,28 @@
 "use client";
 import { ReactTyped } from "react-typed";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  useInView,
-} from "framer-motion";
-import { useRef } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import SocailMedia from "@/components/social-media";
 
 export const About = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-
-  const isTextInView = useInView(textRef, { once: true, margin: "-100px" });
-  const isImageInView = useInView(imageRef, { once: true, margin: "-100px" });
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
-
-  const springY = useSpring(y, { stiffness: 100, damping: 30 });
-  const springOpacity = useSpring(opacity, { stiffness: 100, damping: 30 });
-  const springScale = useSpring(scale, { stiffness: 100, damping: 30 });
-
-  const floatingVariants = {
-    animate: {
-      y: [0, -15, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
   const textVariants = {
-    initial: { opacity: 0, y: 50 },
+    initial: { opacity: 0, y: 30 },
     animate: {
       opacity: 1,
       y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const imageVariants = {
+    initial: { opacity: 0, scale: 0.9 },
+    animate: {
+      opacity: 1,
+      scale: 1,
       transition: {
         duration: 0.8,
         ease: "easeOut",
@@ -64,54 +30,49 @@ export const About = () => {
     },
   };
 
-  const imageVariants = {
-    initial: { opacity: 0, scale: 0.8 },
+  const containerVariants = {
+    initial: {},
     animate: {
-      opacity: 1,
-      scale: 1,
       transition: {
-        duration: 1.2,
-        ease: "easeOut",
+        staggerChildren: 0.2,
       },
     },
   };
 
   return (
-    <div className="relative overflow-hidden py-4 sm:py-8 lg:py-12 xl:py-16 px-4 sm:px-6 lg:px-8 xl:px-10 w-full">
+    <div className="relative overflow-hidden py-4 sm:py-8 lg:py-12 xl:py-16 px-4 sm:px-6 lg:px-8 xl:px-10 w-full z-0">
       <motion.section
-        ref={containerRef}
-        style={{ y: springY, opacity: springOpacity, scale: springScale }}
+        variants={containerVariants}
+        initial="initial"
+        animate="animate"
         className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-8 lg:gap-8 xl:gap-12 w-full"
       >
         {/* Left side - Text content */}
         <motion.div
-          ref={textRef}
-          variants={staggerContainer}
-          initial="initial"
-          animate={isTextInView ? "animate" : "initial"}
-          className="flex-1 w-full max-w-none lg:max-w-2xl order-2 lg:order-1 px-0"
+          variants={textVariants}
+          className="flex-1 w-full max-w-none lg:max-w-2xl order-2 lg:order-1 px-0 z-10"
         >
           <motion.h1
             variants={textVariants}
-            className="font-mono text-xl sm:text-3xl  my-2 sm:my-4 lg:my-6 text-gray-300 leading-tight text-center lg:text-left"
+            className="font-serif text-xl sm:text-4xl my-2 sm:my-4 lg:my-6 text-gray-300 leading-tight text-center lg:text-left"
           >
             <span className="mr-2 sm:mr-3 lg:mr-4">Hello</span>
           </motion.h1>
 
           <motion.h1
             variants={textVariants}
-            className="text-2xl  sm:text-5xl  -my-1 sm:-my-2 lg:-my-3 font-bold leading-tight text-white text-center lg:text-left"
+            className="text-2xl sm:text-5xl -my-1 sm:-my-2 lg:-my-3 font-serif leading-tight text-white text-center lg:text-left"
           >
             <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4">I&apos;m</span>
-            <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Shreeram
             </span>
             <span className="mr-1 xs:mr-2 sm:mr-3 lg:mr-4">Mutukundu</span>
           </motion.h1>
 
           <motion.div variants={textVariants} className="relative mt-2">
-            <p className=" text-2xl sm:text-5xl font-bold my-2 sm:my-3 lg:my-4 leading-tight tracking-wide sm:tracking-wider text-center lg:text-left">
-              <span className="mr-1 mt-4 xs:mr-2 sm:mr-3 lg:mr-4 bg-gradient-to-r from-purple-600 to-blue-400 bg-clip-text text-transparent">
+            <p className="text-2xl sm:text-5xl font-serif my-4 sm:my-3 lg:my-4 leading-tight tracking-wide sm:tracking-wider text-center lg:text-left">
+              <span className="mt-4 xs:mr-2 sm:mr-3 lg:mr-4 bg-gradient-to-r my-4 from-white via-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 <ReactTyped
                   strings={[
                     "Full Stack Engineer",
@@ -127,19 +88,19 @@ export const About = () => {
               </span>
             </p>
           </motion.div>
+
+          {/* Social Media Icons */}
+          <SocailMedia />
         </motion.div>
 
         {/* Right side - Image */}
         <motion.div
-          ref={imageRef}
           variants={imageVariants}
-          initial="initial"
-          animate={isImageInView ? "animate" : "initial"}
-          className="flex justify-center relative group rounded-full flex-1 order-1 lg:order-2 w-full h-[50vh] md:h-auto items-center"
+          className="flex justify-center relative group rounded-full flex-1 order-1 lg:order-2 w-full h-[50vh] md:h-auto items-center z-10"
         >
           {/* Glowing background effect */}
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-xl sm:blur-2xl lg:blur-3xl"
+            className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-xl sm:blur-2xl lg:blur-3xl"
             animate={{
               scale: [1, 1.1, 1],
               opacity: [0.3, 0.5, 0.3],
@@ -153,21 +114,19 @@ export const About = () => {
 
           {/* Main image with hover effects */}
           <motion.div
-            className="relative z-10 mt-4 sm:mt-1"
-            whileHover={{
-              scale: 1.05,
-            }}
+            className="relative z-10 mt-28 sm:mt-12"
+            whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
             <img
               src="https://avatars.githubusercontent.com/u/126177107?v=4"
               alt="Shreeram Mutukundu"
-              className="rounded-full w-64 h-64 xs:w-72 xs:h-72 sm:w-80 sm:h-80 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 border-2 sm:border-3 lg:border-4 border-purple-500/30 shadow-lg sm:shadow-xl lg:shadow-2xl shadow-purple-500/20 object-cover"
+              className="rounded-full w-64 h-64 xs:w-72 xs:h-72 sm:w-80 sm:h-80 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 border-2 sm:border-3 lg:border-4 border-blue-500/30 shadow-lg sm:shadow-xl lg:shadow-2xl shadow-blue-500/20 object-cover"
             />
 
             {/* Floating ring effect */}
             <motion.div
-              className="absolute inset-0 rounded-full border border-purple-400/50 sm:border-2"
+              className="absolute inset-0 rounded-full border border-blue-400/50 sm:border-2"
               animate={{
                 scale: [1, 1.05, 1],
                 opacity: [0.5, 0.7, 0.5],
@@ -182,7 +141,7 @@ export const About = () => {
 
           {/* Single floating element */}
           <motion.div
-            className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
+            className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"
             animate={{
               y: [0, -8, 0],
               rotate: [0, 180],

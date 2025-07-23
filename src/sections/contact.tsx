@@ -42,7 +42,7 @@ export const Contact = () => {
       >
         shreerammutukundu.2003@gmail.com
       </p>
-      <p className="text-center font-mono">@shreeram312</p>
+      <p className="text-center font-serif">@shreeram312</p>
       <div className="text-right">
         <p className="font-semibold items-center justify-center">
           Crafted with{" "}

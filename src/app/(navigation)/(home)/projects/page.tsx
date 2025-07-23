@@ -36,7 +36,7 @@ const page = async () => {
     })) || [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div className="min-h-screen ">
       <div className="relative ">
         <Projects projects={transformedProjects} />
       </div>

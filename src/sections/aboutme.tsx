@@ -101,7 +101,7 @@ const Aboutme = () => {
         className="text-center mb-8 sm:mb-12 lg:mb-16"
       >
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-serif text-white mb-3 sm:mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
@@ -130,7 +130,7 @@ const Aboutme = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="space-y-3 sm:space-y-4"
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-white">
+            <h3 className="text-xl sm:text-2xl font-serif text-white">
               Who I Am?
             </h3>
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
@@ -156,9 +156,9 @@ const Aboutme = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="p-4 sm:p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-xl"
           >
-            <p className="text-purple-300 font-mono text-sm sm:text-lg text-center">
+            <p className="text-purple-300 font-serif text-sm sm:text-lg text-center">
               🚀{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-bold">
+              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-serif">
                 On the grind to become a cracked dev
               </span>{" "}
               — one build at a time! 💻
@@ -211,7 +211,7 @@ const Aboutme = () => {
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <span className="text-gray-400 text-sm font-mono">coder.js</span>
+              <span className="text-gray-400 text-sm font-serif">coder.js</span>
             </div>
 
             {/* Code Content */}
@@ -220,7 +220,7 @@ const Aboutme = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.8 }}
-                className="space-y-4 font-mono text-sm"
+                className="space-y-4 font-serif text-sm"
               >
                 <div className="flex items-center">
                   <span className="text-purple-400">const</span>
